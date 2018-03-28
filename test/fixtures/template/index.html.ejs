@@ -1,0 +1,34 @@
+<%
+	data.page = Object.assign({
+		title: 'EJS compile example',
+		description: 'This example illustrates using the vanilla JS flavor of spinner as an <em>ES module, compiled with webpack</em>.',
+		content: './_partial.ejs'
+	}, data.page || {});
+	var stylesheets = stylesheets || [];
+	var scripts = scripts || [];
+_%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= data.page.title %></title>
+	<%_ const stylesHtml = []; data.stylesheets.forEach(stylesheet => {
+		stylesHtml.push(`<link rel="stylesheet" type="text/css" href="${stylesheet}">`);
+	}); _%>
+	<%- stylesHtml.join('\n\t'); %>
+</head>
+<body>
+	<div class="page">
+		<div class="page__intro">
+			<h1 class="page__title"><%= data.page.title %></h1>
+			<p style="margin-bottom: 3rem;"><%- data.page.description %></p>
+		</div>
+
+		<%- include(data.page.content); _%>
+	</div><% _%>
+
+	<%_ const scriptsHtml = []; data.scripts.forEach(scriptPath => {
+		scriptsHtml.push(`<script type="text/javascript" src="${scriptPath}"></script>`);
+	}); %>
+	<%- scriptsHtml.join('\n\t'); %>
+</body>
+</html>
