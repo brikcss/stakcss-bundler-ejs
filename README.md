@@ -1,5 +1,7 @@
 # Stakcss EJS Bundler
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brikcss/stakcss-bundler-ejs.svg)](https://greenkeeper.io/)
+
 > Bundler for [Stakcss](https://github.com/brikcss/stakcss) that compiles [EJS](https://github.com/mde/ejs).
 
 <!-- Shields. -->
